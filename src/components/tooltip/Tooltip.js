@@ -6,21 +6,25 @@ export const Tooltip = ({position,content}) => {
   //variable to decide to show/remove tooltip 
   const [showToolTip, setshowToolTip] = useState(false)
   
-  //text to be shown as tooltip
+  //text to be shown as tooltip and timer
   const toolTip = "Click this button to submit"
+  var  timer;
 
-  //function to toggle tooltip on (mouse hover)/(mouse out)
-  const toggleToolTip = ()=>{
-    var  timer;
+  //function to set  setshowToolTiptoggle to true 
+  const toolTipOn = ()=>{    
     if(showToolTip===false){      
         timer=setTimeout( ()=>{
             setshowToolTip(true);
         },300)
         return;
     }
+  }
+  
+  
+  //function to set  setshowToolTiptoggle to false
+  const toolTipOff = ()=>{
     clearInterval(timer);
     setshowToolTip(false);
-    return;
   }
  
   // return function
@@ -30,7 +34,7 @@ export const Tooltip = ({position,content}) => {
             when we move mouse over, then toggleToolTip will change value of showToolTip to TRUE
             when we move mouse away, then toggleToolTip will change value of showToolTip to FALSE */}   
 
-        <button onMouseEnter={toggleToolTip} onMouseOut={toggleToolTip} className="btn" >
+        <button onMouseEnter={toolTipOn} onMouseOut={toolTipOff} className="btn" >
             {content}            
         </button>
         
