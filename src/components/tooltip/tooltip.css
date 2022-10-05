@@ -1,0 +1,101 @@
+:root{
+    --tooltip-background-color:rgb(224, 207, 155);
+    --text-color: black;
+}
+
+.btn{
+    width:130px;
+    padding: 8px;
+    height: 32px;
+    border-radius: 3px;
+}
+/* main tool tip box */
+.tooltip{
+    position:absolute;
+    padding:15px;
+    background-color:var(--tooltip-background-color);
+    color:var(--text-color);
+    margin: 2px;
+    border-radius: 4px;
+    
+}
+
+/* positioning tooltip at the top position */
+.top{
+    margin-top:-100px;
+}
+
+/* positioning tooltip at the bottom position */
+.bottom{
+    margin-top:20px;
+}
+
+/* positioning tooltip at the left position */
+.left{
+    margin-top: -38px;
+    margin-left: -230px;
+}
+
+/* positioning tooltip at the right position */
+.right{
+    margin-top: -38px;
+    margin-left: 150px;
+    transition: 150ms transform;
+
+}
+/* tooltip arrow */
+.top::after{
+    /* common part */
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    transform: rotate(45deg);
+    
+    /* variable according to position */
+    top:100%;
+    left: 30%;
+    margin-top: -11px;
+    background-color:var(--tooltip-background-color); 
+} 
+
+/* tooltip arrow */
+.bottom::after{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    transform: rotate(45deg);
+    top:0%;
+    left: 30%;
+    margin-top: -10px;
+    background-color:var(--tooltip-background-color);
+}
+
+/* tooltip arrow */
+.left::after{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    transform: rotate(45deg);
+    top:50%;
+    left: 100%;
+    margin-left: -14px;
+    margin-top: -11px;
+    background-color:var(--tooltip-background-color);
+}
+
+/* tooltip arrow */
+.right::after{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    transform: rotate(45deg);
+    top:50%;
+    left: 0%;
+    margin-left: -8px;
+    margin-top: -11px;
+    background-color:var(--tooltip-background-color);
+}

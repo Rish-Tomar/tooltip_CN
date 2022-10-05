@@ -3,10 +3,13 @@ import './tooltip.css'
 
 export const Tooltip = ({position}) => {
 
+  //variable to decide to show/remove tooltip 
   const [showToolTip, setshowToolTip] = useState(false)
+  
+  //text to be shown as tooltip
+  const toolTip = "Click this button to submit"
 
-  const toolTip = "hello !! this is a button"
-
+  //function to toggle tooltip on (mouse hover)/(mouse out)
   const toggleToolTip = ()=>{
     var  timer
     if(showToolTip===false){      
@@ -25,9 +28,7 @@ export const Tooltip = ({position}) => {
         <button onMouseOver={toggleToolTip} onMouseOut={toggleToolTip} className="btn" >
             SUBMIT Button            
         </button>
-
         {showToolTip? < div className= {`tooltip ${position}`} > {toolTip} </div> :"" }
-
     </div>
   )
 }

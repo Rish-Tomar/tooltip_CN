@@ -1,12 +1,13 @@
 
 import './App.css';
-import { Tooltip } from './Tooltip';
+import { Tooltip } from '../tooltip/Tooltip';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <Tooltip position={"bottom"} content={"Submit Button"}/>
+          {/* calling the tooltip component */}
+          <Tooltip position={"top"} content={"Submit Button"}/>
       </header>
     </div>
   );
