@@ -26,9 +26,15 @@ export const Tooltip = ({position,content}) => {
   // return function
   return (
     <div className='div'>
+        {/* button on which tooltip will function 
+            when we move mouse over, then toggleToolTip will change value of showToolTip to TRUE
+            when we move mouse away, then toggleToolTip will change value of showToolTip to FALSE */}   
+
         <button onMouseEnter={toggleToolTip} onMouseOut={toggleToolTip} className="btn" >
             {content}            
         </button>
+        
+        {/* checking value of showToolTip, if true then show div element*/}
         {showToolTip? < div className= {`tooltip ${position}`} > {toolTip} </div> :"" }
     </div>
   )
