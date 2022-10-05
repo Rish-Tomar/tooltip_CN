@@ -1,0 +1,165 @@
+:root{
+    --tooltip-background-color:rgb(235, 238, 241);
+    --text-color: black;
+    --tooltip-position:10px;
+}
+
+.btn{
+    width:130px;
+    padding: 8px;
+    height: 32px;
+}
+/* main tool tip box */
+.tooltip{
+    position:absolute;
+    padding:15px;
+    background-color:var(--tooltip-background-color);
+    color:var(--text-color);
+    margin: 2px;
+    border-radius: 4px;
+    
+}
+.tooltip::before{
+    transition: 150ms transform;
+    transform-origin: bottom;
+}
+/* positioning tooltip at the top position */
+.top{
+    margin-top:-95px;
+}
+
+.bottom{
+    margin-top:20px;
+}
+
+.left{
+    margin-top: -38px;
+    margin-left: -210px;
+}
+
+.right{
+    margin-top: -38px;
+    margin-left: 150px;
+    transition: 150ms transform;
+
+}
+/* tooltip arrow */
+.top::after{
+    /* common part */
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    transform: rotate(45deg);
+    
+    /* variable according to position */
+    top:100%;
+    left: 30%;
+    margin-top: -11px;
+    background-color:var(--tooltip-background-color); 
+} 
+
+.bottom::after{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    transform: rotate(45deg);
+    top:0%;
+    left: 30%;
+    margin-top: -10px;
+    background-color:var(--tooltip-background-color);
+}
+
+.left::after{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    transform: rotate(45deg);
+    top:50%;
+    left: 100%;
+    margin-left: -14px;
+    margin-top: -11px;
+    background-color:var(--tooltip-background-color);
+}
+.right::after{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    transform: rotate(45deg);
+    top:50%;
+    left: 0%;
+    margin-left: -8px;
+    margin-top: -11px;
+    background-color:var(--tooltip-background-color);
+}
+
+/* for left  */
+/* .tooltip::after{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    background-color: brown;
+    border-top: 0px solid #ffff;
+    border-bottom: 2px solid #ffff;
+    border-left: 2px solid #ffff;
+    border-right: 0px solid #ffff;
+    top:50%;
+    left: 0%;
+    margin-left: -11px;
+    transform: rotate(45deg);
+    margin-top: -11px;
+    background-color: rgb(168, 204, 235);
+} */
+
+/* for right aarrow */
+/* .tooltip::after{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    background-color: brown;
+    border-top: 2px solid #ffff;
+    border-bottom: 0px solid #ffff;
+    border-left: 0px solid #ffff;
+    border-right: 2px solid #ffff;
+    top:50%;
+    left: 0%;
+    margin-left: 176px;
+    transform: rotate(45deg);
+    margin-top: -11px;
+    background-color: rgb(168, 204, 235);
+} */
+
+/* for top arrow */
+/* 
+.tooltip::after{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    background-color: brown;
+    border-top: 2px solid #ffff;
+    border-bottom: 0px solid #ffff;
+    border-left: 2px solid #ffff;
+    border-right: 0px solid #ffff;
+    top:0%;
+    left: 0%;
+    margin-left: 80px;
+    transform: rotate(45deg);
+    margin-top: -11px;
+    background-color: var(--tooltip-background-color);
+} */
+/* .tooltip::before{
+    content: "";
+    position: absolute;
+    top: 50%;                        
+    margin-top: -12px;                
+    left:-20px;
+    border: 10px solid transparent;
+    border-right-color: rgb(185, 152, 152);
+    z-index: 1;
+} */
